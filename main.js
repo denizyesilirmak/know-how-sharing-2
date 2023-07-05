@@ -26,16 +26,16 @@ const earthMaterialDay = new THREE.MeshLambertMaterial({
 
 //texture
 const loader = new THREE.TextureLoader();
-const dayTexture = loader.load("./assets/2k_earth_daymap.jpg");
+const dayTexture = loader.load("./public/2k_earth_daymap.jpg");
 earthMaterialDay.map = dayTexture;
 
 //specular map
-const specularTexture = loader.load("./assets/2k_earth_specular_map.png");
+const specularTexture = loader.load("./public/2k_earth_specular_map.png");
 
 earthMaterialDay.specularMap = specularTexture;
 
 //normal map
-const normalTexture = loader.load("./assets/2k_earth_normal_map.png");
+const normalTexture = loader.load("./public/2k_earth_normal_map.png");
 earthMaterialDay.normalMap = normalTexture;
 
 //point light
@@ -63,7 +63,7 @@ const earthMaterialNight = new THREE.MeshStandardMaterial({
   color: 0xffffff,
 });
 
-const nightTexture = loader.load("./assets/2k_earth_nightmap.jpg");
+const nightTexture = loader.load("./public/2k_earth_nightmap.jpg");
 earthMaterialNight.emissiveMap = nightTexture;
 earthMaterialNight.emissive = new THREE.Color(0x111111);
 earthMaterialNight.emissiveIntensity = 60;
@@ -80,7 +80,7 @@ const cloudMaterial = new THREE.MeshLambertMaterial({
   blending: THREE.AdditiveBlending,
 });
 
-const cloudTexture = loader.load("./assets/2k_earth_clouds.jpg");
+const cloudTexture = loader.load("./public/2k_earth_clouds.jpg");
 cloudMaterial.map = cloudTexture;
 
 const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
@@ -103,7 +103,7 @@ cloudMesh.receiveShadow = true;
 //stars
 const starGeometry = new THREE.SphereGeometry(1000, 64, 64);
 const starMaterial = new THREE.MeshBasicMaterial({
-  map: loader.load("./assets/2k_stars_milky_way.jpg"),
+  map: loader.load("./public/2k_stars_milky_way.jpg"),
   side: THREE.BackSide,
   opacity: 0.4,
   transparent: true,
@@ -119,7 +119,7 @@ const moonMaterial = new THREE.MeshLambertMaterial({
   color: 0xffffff,
 });
 
-const moonTexture = loader.load("./assets/2k_moon.jpg");
+const moonTexture = loader.load("./public/2k_moon.jpg");
 
 moonMaterial.map = moonTexture;
 
@@ -136,7 +136,7 @@ const sunGeometry = new THREE.SphereGeometry(1, 64, 64);
 const sunMaterial = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     });
-const sunTexture = loader.load("./assets/2k_sun.jpg");
+const sunTexture = loader.load("./public/2k_sun.jpg");
 
 
 function animate() {
